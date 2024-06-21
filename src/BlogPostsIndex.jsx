@@ -2,12 +2,10 @@ export function BlogPostsIndex(props) {
   return (
     <div>
       <h1>All Posts</h1>
-      {props.blogPosts.map((blogPosts) => (
-        <div key={blogPosts.id}>
-          <h2>Title</h2>
-          <p>{blogPosts.title}</p>
-          <h2>Body</h2>
-          <p>{blogPosts.body}</p>
+      {props.blogPosts.map((blogPost) => (
+        <div key={blogPost.id}>
+          <h2>Title: {blogPost.title}</h2>
+          <button onClick={() => props.onShowBlogPost(blogPost)}>Read post</button>
         </div>
       ))}
     </div>
